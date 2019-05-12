@@ -20,7 +20,6 @@ void setup() {
 	WiFi.mode(WIFI_STA);
 	WiFi.disconnect();
 
-
 	// WiFi scan
 
 	{Serial.println("scan start");
@@ -97,7 +96,7 @@ void setup() {
 
 		WiFi.reconnect();
 		WiFi.mode(WIFI_STA);
-		WiFi.hostname(accessoryName);
+		WiFi.hostname("ESP8266");
 		WiFi.begin(SSID, PASSWORD);
 
 		Serial.print("Connecting to ");
