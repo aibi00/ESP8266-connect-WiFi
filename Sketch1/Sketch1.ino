@@ -39,6 +39,7 @@ void setup() {
 				Serial.print(i + 1);
 				Serial.print(": ");
 				Serial.print(WiFi.SSID(i));
+				Serial.println();
 				delay(10);
 			}
 		}
