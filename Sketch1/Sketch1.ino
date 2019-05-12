@@ -106,7 +106,8 @@ void setup() {
 			Serial.print(" . ");
 		}
 
-		Serial.print(" done! ");
+		Serial.println(" done! ");
+
 
 		Serial.print(WiFi.localIP());
 	}
