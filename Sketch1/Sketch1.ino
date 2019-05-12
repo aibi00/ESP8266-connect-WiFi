@@ -8,7 +8,6 @@
 
 #define KEY_ENTER '\n'
 
-char accessoryName[16] = { 0 };
 String ssid;
 String password;
 
@@ -21,34 +20,29 @@ void setup() {
 
 	// WiFi scan
 
-	{Serial.println("scan start");
-
-	// WiFi.scanNetworks will return the number of networks found
-	int n = WiFi.scanNetworks();
-	Serial.println("scan done");
-	if (n == 0)
-		Serial.println("no networks found");
-	else
 	{
-		Serial.print(n);
-		Serial.println(" networks found");
-		for (int i = 0; i < n; ++i)
+		Serial.println("scan start");
+
+		// WiFi.scanNetworks will return the number of networks found
+		int n = WiFi.scanNetworks();
+		Serial.println("scan done");
+		if (n == 0)
+			Serial.println("no networks found");
+		else
 		{
+			Serial.print(n);
+			Serial.println(" networks found");
+			for (int i = 0; i < n; ++i)
+			{
 
-			// Print SSID and RSSI for each network found
-			Serial.print(i + 1);
-			Serial.print(": ");
-			Serial.print(WiFi.SSID(i));
-			Serial.print(" (");
-			Serial.print(WiFi.RSSI(i));
-			Serial.print(")");
-			Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE) ? " " : "*");
-			delay(10);
-
-
+				// Print SSID and RSSI for each network found
+				Serial.print(i + 1);
+				Serial.print(": ");
+				Serial.print(WiFi.SSID(i));
+				delay(10);
+			}
 		}
-	}
-	Serial.println(""); }
+		Serial.println(""); }
 
 	// choose WiFi
 
@@ -71,15 +65,15 @@ void setup() {
 		// enter password of WiFi
 		Serial.print("\n Enter the password: ");
 		Serial.print("\n Confirm with ENTER\n");
-		
-		
+
+
 		while (Serial.available() == 0) {
 			delay(100);
 		}
 
 		password = Serial.readStringUntil(KEY_ENTER);
 
-		Serial.println(password);	
+		Serial.println(password);
 	}
 
 
