@@ -62,8 +62,7 @@ void setup() {
 		Serial.read(); // exterminate first random byte
 
 		while (Serial.available() == 0) {
-			delay(500);
-			Serial.print(".");
+			delay(100);
 		}
 
 		ssid = Serial.readStringUntil(KEY_ENTER);
@@ -76,8 +75,7 @@ void setup() {
 		
 		
 		while (Serial.available() == 0) {
-			delay(500);
-			Serial.print(".");
+			delay(100);
 		}
 
 		password = Serial.readStringUntil(KEY_ENTER);
