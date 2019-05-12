@@ -5,7 +5,6 @@
  */
 
 #include "ESP8266WiFi.h"
- // #include "./config.test.h"
 
 #define KEY_ENTER '\n'
 
